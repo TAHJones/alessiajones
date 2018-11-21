@@ -53,15 +53,8 @@ $footer-font-stack: $primary-font-stack;
 .footer-nav {
   background-color: $footer-bg-color;
   color: $footer-li-color;
-  // padding: rem-calc(10);
-  // font-size: 0;
   list-style: none;
-  // margin: 0;
-  // overflow: hidden;
-  // padding: 0;
-  // width: 100%;
   margin-bottom: rem-calc(20);
-  // margin-top: rem-calc(40);
 
   > li {
     display: inline-block;

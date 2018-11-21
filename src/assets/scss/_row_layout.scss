@@ -79,8 +79,6 @@ $slider-color: #e8f1bb;
 }
 
 
-
-
 /* row layout classes */
 
 .row-page {
@@ -123,5 +121,4 @@ $slider-color: #e8f1bb;
   @include breakpoint(large){
     padding-left: 40px;
   }
-  // @include row-padding(fader-padding);
 }

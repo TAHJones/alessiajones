@@ -80,7 +80,7 @@ $custom-button-color-hover: lighten(#222, 60%);
   $border-radius: $custom-button-border-radius,
   $border-width: $custom-button-border-width
 ) {
-  border-color: #222; // $border-color;
+  border-color: #222;
   border-radius: $border-radius;
   border-width: $border-width;
 }

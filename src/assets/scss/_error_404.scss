@@ -77,12 +77,10 @@ $error-404-link-focus-font-size-large: rem-calc(42);
 
     @include breakpoint(medium up) {
       font-size: $error-404-paragraph-font-size-medium;
-      // margin: 0 0 rem-calc(40);
     }
   }
 
   > div {
-    // @include custom-button-styles()
     margin: rem-calc(100) 0 rem-calc(130);
     text-align: center;
 
@@ -91,7 +89,6 @@ $error-404-link-focus-font-size-large: rem-calc(42);
     }
 
      > a {
-      // @include error-404-link-styles;
       background-color: lighten(#222, 20%);
       border-color: #222;
       border-style: solid;
@@ -121,24 +118,6 @@ $error-404-link-focus-font-size-large: rem-calc(42);
       &:focus {
         background-color: lighten(#222, 10%);
         color: lighten(#222, 60%);
-        /* @include error-404-link-focus-styles;
-        font-size: $error-404-link-focus-font-size-smaller;          
-        padding: rem-calc(21) rem-calc(0);
-
-        @include breakpoint(small) {
-          font-size: $error-404-link-focus-font-size-small;          
-          padding: rem-calc(21) rem-calc(18);
-        }
-
-        @include breakpoint(medium) {
-        font-size: $error-404-link-focus-font-size-medium;
-        padding: rem-calc(31) rem-calc(51);
-        }
-          
-        @include breakpoint(large up) {
-        font-size: $error-404-link-focus-font-size-large;
-        padding: rem-calc(41) rem-calc(61); 
-        } */
       }
     }
   }

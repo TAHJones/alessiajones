@@ -5,21 +5,15 @@
 /* outer and inner container */
 
 body {
-  background-color: $background-color;
   font-family: $primary-font-stack;
-
-  /* @include breakpoint(large) {
-    background-color: $backgroundcolor-large;
-  } */
+  background-color:#39a7cc;  /* #222; */
 }
 
-/* .wrapper {
-  @include breakpoint(large) {
-    @include grid-row($behavior: wrapper);
-    @include wrapper-styles();
-  }
-} */
-
+.page {
+    background-color: $background-color;
+    margin: 0 auto;
+    max-width: 1200px;
+}
 
 /* Header and Footer*/
 
@@ -32,7 +26,7 @@ header {
 }
 
 footer {
-  margin-bottom: rem-calc(10);
+  margin-bottom: rem-calc(0);
   margin-top: rem-calc(60);
 
   @include breakpoint(medium) {
@@ -95,8 +89,6 @@ ul.exhibition-list {
 }
 
 /* link styles */
-
-// $link-color: #39a7cc;
 
 a.link-page {
   color: #000;

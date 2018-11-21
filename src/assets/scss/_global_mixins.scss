@@ -27,7 +27,7 @@
 // For creating a wrapper, container, nested, and collapsed rows.
 //
 // $behavior - Any special behavior for this row? Default: false. Options: nest, collapse, nest-collapse, false.
-@mixin grid-row($behavior: false) {
+/* @mixin grid-row($behavior: false) {
 
   // use @include grid-row(nest); to include a nested row
   @if $behavior == nest {
@@ -66,15 +66,15 @@
 
   // Clearfix for all rows
   @include clearfix();
-}
+} */
 
 // styles for wrapper
 
-@mixin wrapper-styles () {
+/* @mixin wrapper-styles () {
   background-color: $foregroundcolor;
   border-color: $foregroundcolor;
   border-radius: 10px;
   border-style: solid;
   border-width: 12px;
   margin: 20px auto;
-}
+} */
