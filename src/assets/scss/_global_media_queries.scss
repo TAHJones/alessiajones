@@ -1,0 +1,155 @@
+/* -----------------------------------------------------------------------
+    global media queries
+-------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------
+      media queries
+-------------------------------------------------------------------------- */
+
+// $xsmall-breakpoint: em-calc(320) !default;
+// $small-breakpoint: em-calc(640) !default;
+// $medium-breakpoint: em-calc(1024) !default;
+// $large-breakpoint: em-calc(1440) !default;
+// $xlarge-breakpoint: em-calc(1920) !default;
+
+/* @mixin responsive($width) {
+  @if $width == smallDown {
+    @media only screen and (min-width: 0) and (max-width: $small-breakpoint){@content;}
+  }
+
+  @else if $width == xsmall {
+    @media only screen and (min-width: 0) and (max-width: $xsmall-breakpoint){@content;}
+  }
+
+  @else if $width == small {
+    @media only screen and (min-width: ($xsmall-breakpoint + em-calc(1))) and (max-width: $small-breakpoint){@content;}
+  }
+
+  @else if $width == medium {
+    @media only screen and (min-width: ($small-breakpoint + em-calc(1))) and (max-width: $medium-breakpoint){@content;}
+  }
+
+  @else if $width == mediumUp {
+    @media only screen and (min-width: ($small-breakpoint + em-calc(1))){@content;}
+  }
+
+  @else if $width == large {
+    @media only screen and (min-width: ($medium-breakpoint + em-calc(1))) and (max-width: $large-breakpoint){@content;}
+  }
+
+  @else if $width == xlarge {
+    @media only screen and (min-width: ($large-breakpoint + em-calc(1))) and (max-width: $xlarge-breakpoint){@content;}
+  }
+
+  @else if $width == largeUp {
+    @media only screen and (min-width: ($medium-breakpoint + em-calc(1))){@content;}
+  }
+} */
+
+/* media query - variables */
+
+// $xsmall-breakpoint: em-calc(320) !default;
+// $small-breakpoint: em-calc(640) !default;
+// $medium-breakpoint: em-calc(1024) !default;
+// $large-breakpoint: em-calc(1440) !default;
+//$xlarge-breakpoint: em-calc(1920) !default;
+
+
+/* media query - mixin */
+
+/* @mixin responsive($width) {
+  @if $width == xsmall {
+    @media only screen and (min-width: 0) and (max-width: $xsmall-breakpoint){@content;}
+  }
+
+  @else if $width == small {
+    @media only screen and (min-width: ($xsmall-breakpoint + em-calc(1))) and (max-width: $small-breakpoint){@content;}
+  }
+
+  @else if $width == medium {
+    @media only screen and (min-width: ($small-breakpoint + em-calc(1))) and (max-width: $medium-breakpoint){@content;}
+  }
+
+  @else if $width == large {
+    @media only screen and (min-width: ($medium-breakpoint + em-calc(1))) and (max-width: $large-breakpoint){@content;}
+  }
+
+  @else if $width == xlarge {
+    @media only screen and (min-width: ($large-breakpoint + em-calc(1))) and (max-width: $xlarge-breakpoint){@content;}
+  }
+} */
+
+
+/* panel - breakpoint variables */
+
+// $breakpoint-small-one: em-calc(270);
+// $breakpoint-small-two: em-calc(340);
+
+// $breakpoint-one: em-calc(700);
+// $breakpoint-two: em-calc(750);
+// $breakpoint-three: em-calc(800);
+// $breakpoint-four: em-calc(850);
+// $breakpoint-five: em-calc(900);
+
+/* Small title & panel - breakpoint mixin */
+
+/* @mixin responsive-small-panel($width) {
+
+  @if $width == breakone {
+  @media only screen and (min-width: 0) and (max-width: $breakpoint-small-one){@content;}
+  }
+
+@else if $width == breaktwo {
+  @media only screen and (min-width: ($breakpoint-small-one + em-calc(1))) and (max-width: $breakpoint-small-two){@content;}
+  }
+
+@else if $width == breakthree {
+  @media only screen and (min-width: ($breakpoint-small-two + em-calc(1))) and (max-width: $xsmall-breakpoint){@content;}
+  }
+} */
+
+/* panel - breakpoint mixin */
+
+/* @mixin responsive-custom-panel($width) {
+
+  @if $width == breakone {
+    @media only screen and (min-width: ($small-breakpoint + em-calc(1))) and (max-width: $breakpoint-one){@content;}
+    }
+
+  @else if $width == breaktwo {
+    @media only screen and (min-width: ($breakpoint-one + em-calc(1))) and (max-width: $breakpoint-two){@content;}
+    }
+
+  @else if $width == breakthree {
+    @media only screen and (min-width: ($breakpoint-two + em-calc(1))) and (max-width: $breakpoint-three){@content;}
+    }
+
+  @else if $width == breakfour {
+    @media only screen and (min-width: ($breakpoint-three + em-calc(1))) and (max-width: $breakpoint-four){@content;}
+    }
+
+  @else if $width == breakfive {
+    @media only screen and (min-width: ($breakpoint-four + em-calc(1))) and (max-width: $breakpoint-five){@content;}
+    }
+
+
+  @else if $width == breaksix {
+    @media only screen and (min-width: ($breakpoint-five + em-calc(1))) and (max-width: $medium-breakpoint){@content;}
+    }
+}
+ */
+
+/* top-bar breakpoint mixin */
+
+// $top-bar-breakpoint-one: em-calc(641);
+// $top-bar-breakpoint-two: em-calc(800);
+
+/* @mixin responsive-top-bar($width) {
+  @if $width == breakone {
+    @media only screen and (min-width: $top-bar-breakpoint-one) and (max-width: $top-bar-breakpoint-two){@content;}
+  }
+
+  @else if $width == breaktwo {
+    @media only screen and (min-width: ($top-bar-breakpoint-two + em-calc(1))){@content;}
+  }
+} */

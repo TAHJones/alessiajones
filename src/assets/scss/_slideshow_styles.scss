@@ -1,0 +1,302 @@
+/* -----------------------------------------------------------------------
+    slideshow
+------------------------------------------------------------------------- */
+
+/* panel mixins */
+
+/* @mixin custom-panel() {
+  h3 {
+    font-family: $primary-font-stack;
+    font-weight: bold;
+    list-style: none;
+    text-align: center;
+  }
+
+  h5 {
+    font-family: $secondary-font-stack;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+@mixin custom-panel-breakone() {
+  h3 {
+    font-size: rem-calc(20);
+    margin-bottom: rem-calc(2);
+    margin-top: rem-calc(15);
+  }
+
+  h5 {
+    font-size: rem-calc(13);
+  }
+}
+
+@mixin custom-panel-breaktwo() {
+  h3 {
+    font-size: rem-calc(20);
+    margin-bottom: rem-calc(5);
+    margin-top: rem-calc(25);
+  }
+
+  h5 {
+    font-size: rem-calc(15);
+  }
+}
+
+@mixin custom-panel-breakthree() {
+  h3 {
+    font-size: rem-calc(23);
+    margin-bottom: rem-calc(8);
+    margin-top: rem-calc(28);
+  }
+
+  h5 {
+    font-size: rem-calc(18);
+  }
+}
+
+@mixin custom-panel-breakfour() {
+  h3 {
+    font-size: rem-calc(25);
+    margin-bottom: rem-calc(10);
+    margin-top: rem-calc(30);
+  }
+
+  h5 {
+    font-size: rem-calc(20);
+  }
+}
+
+@mixin custom-panel-breakfive() {
+  h3 {
+    font-size: rem-calc(28);
+    margin-bottom: rem-calc(13);
+    margin-top: rem-calc(33);
+  }
+
+  h5 {
+    font-size: rem-calc(23);
+  }
+} */
+
+/* @mixin custom-panel-medium() {
+  h3 {
+    font-size: rem-calc(30);
+    margin-bottom: rem-calc(15);
+    margin-top: rem-calc(35);
+  }
+
+  h5 {
+    font-size: rem-calc(25);
+  }
+} */
+
+/* @mixin custom-panel-large() {
+  h3 {
+    font-size: rem-calc(30);
+    margin-bottom: rem-calc(15);
+    margin-top: rem-calc(35);
+  }
+
+  h5 {
+    font-size: rem-calc(25);
+    margin-bottom: rem-calc(5);
+  }
+} */
+
+/* button mixins */
+
+/* @mixin custom-button() {
+  display: block;
+
+  &:hover {
+    background: $navigationcolorhover;
+    }
+} */
+
+/* @mixin custom-button-breakone() {
+  font-size: rem-calc(10);
+  margin: 0 20% 8%;
+}
+
+@mixin custom-button-breaktwo() {
+  font-size: rem-calc(10);
+  margin: 0 25%;
+}
+
+@mixin custom-button-breakthree() {
+  font-size: rem-calc(10);
+  margin: 5% 25% 0;
+}
+
+@mixin custom-button-breakfour() {
+  font-size: rem-calc(10);
+  margin: 5% 25% 0;
+}
+
+@mixin custom-button-breakfive() {
+  font-size: rem-calc(10);
+  margin: 10% 30% 0;
+}
+
+@mixin custom-button-medium() {
+  font-size: rem-calc(10);
+  margin: 8% 30% 0;
+}
+
+@mixin custom-button-large() {
+  font-size: rem-calc(15);
+  margin: 5% 30% 0;
+}
+ */
+
+/* panel classes */
+
+/* .fadein-effect,
+.custom-panel {
+  margin-top: rem-calc(20);
+} */
+
+// .custom-panel {
+  /*@include panel(
+    // Sets the panel background color. Default: $panel-pg
+    $bg:$custompanelcolor,
+    // Sets the panel padding amount. Default: $panel-padding
+    $padding:2%,
+    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+    $adjust:true
+  );*/
+
+  /* @include custom-panel();
+
+  @include responsive-custom-panel(breakone) {
+    @include custom-panel-breakone();
+  }
+
+  @include responsive-custom-panel(breaktwo) {
+    @include custom-panel-breaktwo();
+  }
+
+  @include responsive-custom-panel(breakthree) {
+    @include custom-panel-breakthree();
+  }
+
+  @include responsive-custom-panel(breakfour) {
+    @include custom-panel-breakfour();
+  }
+
+  @include responsive-custom-panel(breakfive) {
+    @include custom-panel-breakfive();
+  }
+
+  @include responsive-custom-panel(breaksix) {
+    @include custom-panel-medium();
+  }
+
+  @include responsive(large) {
+    @include custom-panel-large();
+  } */
+
+  /* button classes */
+
+  /* .custom-button {
+    @include button (
+      $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+      $padding: rem-calc(20), $button-sml,
+      Background color. We can set $bg:false for a transparent background. Default: $primary-color.
+      $bg: $custombuttoncolor,
+      If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
+      $radius: true,
+      We can set $full-width:true to remove side padding extend width. Default:false
+      $full-width: false,
+      We can set $disabled:true to create a disabled transparent button. Default:false
+      $disabled: false
+    );
+
+    @include custom-button();
+
+    @include responsive-custom-panel(breakone) {
+      @include custom-button-breakone();
+    }
+
+    @include responsive-custom-panel(breaktwo) {
+      @include custom-button-breaktwo();
+    }
+
+    @include responsive-custom-panel(breakthree) {
+      @include custom-button-breakthree();
+    }
+
+    @include responsive-custom-panel(breakfour) {
+      @include custom-button-breakfour();
+    }
+
+    @include responsive-custom-panel(breakfive) {
+      @include custom-button-breakfive();
+    }
+
+    @include responsive-custom-panel(breaksix) {
+      @include custom-button-medium();
+    }
+
+    @include responsive(large) {
+      @include custom-button-large();
+    }
+  }
+} */
+
+/* h3.title-small {
+  font-family: $secondary-font-stack;
+  font-size: rem-calc(35);
+  font-weight: normal;
+  margin-bottom: rem-calc(40);
+
+  @include responsive-small-panel(breakone) {
+    font-size: rem-calc(14);
+  }
+
+  @include responsive-small-panel(breaktwo) {
+    font-size: rem-calc(20);
+  }
+} */
+
+/* div.custom-panel-small {
+  a,
+  div h3 {
+    padding: rem-calc(20) rem-calc(2) rem-calc(15);
+  }
+} */
+
+/* .custom-panel-small-2 {
+  margin: rem-calc(40) 0 rem-calc(20);
+
+  > a {
+    display: block;
+
+    > h3 {
+        @include responsive-small-panel(breakone) {
+          font-size: rem-calc(13);
+        }
+
+        @include responsive-small-panel(breaktwo) {
+          font-size: rem-calc(18);
+        }
+      }
+
+    &:hover {
+      background-color: darken(#eef9fc, 10%);
+      text-decoration: none;
+    }
+
+  }
+}
+
+p.copyright {
+  @include responsive-small-panel(breakone) {
+    font-size: rem-calc(10);
+  }
+
+  @include responsive-small-panel(breaktwo) {
+    font-size: rem-calc(12);
+  }
+} */

@@ -1,0 +1,114 @@
+/* -----------------------------------------------------------------------
+    top bar
+------------------------------------------------------------------------- */
+
+// changes to _settings.scss - line 387 - 18. Dropdown Menu
+
+// $dropdownmenu-border: 1px solid $medium-gray;
+// $dropdownmenu-border: 1px solid #222; // changed tj 110818
+// $dropdown-menu-item-color-active: get-color(primary);
+// $dropdown-menu-item-color-active: lighten(#39a7cc,20%); // changed tj 110818
+
+// changes to _settings.scss - line 852 - 55. Top Bar
+
+// $topbar-padding: 0.5rem;
+// $topbar-padding: 10rem; // Changed TJ 110818
+// $topbar-background: $light-gray;
+// $topbar-background: #222; // Changed TJ 290718
+
+
+/* paragraph - font size variables */
+
+// $font-size-xsmall: rem-calc(10);
+// $font-size-small: rem-calc(12);
+// $font-size-medium: rem-calc(16);
+// $font-size-large: rem-calc(18);
+
+
+/* navigation - font size variables */
+
+$nav-font-size-xsmall: $font-size-xsmall;
+$nav-font-size-small: $font-size-small;
+$nav-font-size-medium: $font-size-medium;
+$nav-font-size-large: $font-size-large;
+
+
+/* navigation - styles variables */
+
+$dropdown-bg-color: #222;
+$nav-link-color: #39a7cc;
+$link-color-hover: lighten($nav-link-color,20%);
+$link-color-hover: lighten(#39a7cc,20%);
+$link-bg-hover: lighten($dropdown-bg-color,5%);
+$menu-button-color: #39a7cc;
+$menu-button-bg-hover: $link-bg-hover;
+
+
+/* navigation - classes */
+
+.top-bar {padding: rem-calc(0);}
+
+// custom styles for topbar and dropdown menus - TJ 110818
+ul.custom-menu > li {
+
+  > a {
+    background: $dropdown-bg-color;
+    color: $nav-link-color;
+    font-family: $primary-font-stack;
+    padding: rem-calc(20);
+
+    @include breakpoint(small) {
+      font-size: $nav-font-size-xsmall;
+    }
+
+    @include breakpoint(smallx) {
+      font-size: $nav-font-size-small;
+    }
+
+    @include breakpoint(medium) {
+      font-size: $nav-font-size-medium;
+    }
+
+    @include breakpoint(large up) {
+      font-size: $nav-font-size-large;
+    }
+
+    &:hover,
+    &:focus {
+      color: $link-color-hover;
+      background-color: $link-bg-hover;
+      text-decoration: none;
+    }
+
+  } // a
+} // ul.nav-bar-list > li
+
+
+.responsive-menu-small {
+  background-color: #222;
+  > button {
+    color: #39A7CC;
+    font-size: rem-calc(18);
+    font-weight: bold;
+    padding: rem-calc(20);
+  }
+}
+
+.menu-button {
+  color: $menu-button-color;
+  font-weight: bold;
+  font-size: rem-calc(12);
+
+  &:hover {
+    background-color: $menu-button-bg-hover;
+    color: $link-color-hover;
+    text-decoration: none;
+  }
+} // menu-button
+
+// fix dropdown menu padding so hover highlighting expands completely - TJ 110818
+.dropdown{ 
+  > li > a{
+    padding: 20px !important;
+  }
+}

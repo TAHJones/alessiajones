@@ -1,0 +1,126 @@
+/* -----------------------------------------------------------------------
+    footer navigation
+------------------------------------------------------------------------- */
+
+/* footer navigation variables */
+
+/* navigation - styles variables */
+
+$footer-li-color: #39a7cc;
+$footer-bg-color: #222;
+$footer-li-color-hover: lighten($footer-li-color,20%);
+$footer-bg-color-hover: lighten($footer-bg-color,5%);
+
+
+/* paragraph - font size variables */
+
+$font-size-small: rem-calc(12);
+$font-size-smallxx: rem-calc(14);
+$font-size-medium: rem-calc(16);
+$font-size-large: rem-calc(18);
+
+
+/* footer - font size variables */
+
+$footer-font-size-small: $font-size-small;
+$footer-font-size-smallxx: $font-size-smallxx;
+$footer-font-size-medium: $font-size-medium;
+$footer-font-size-large: $font-size-large;
+
+
+/* footer - font stack variables */
+
+$footer-font-stack: $primary-font-stack;
+
+
+/* footer nav - responsive mixin */
+
+@mixin footer-nav (
+  $font-size: $footer-font-size-small,
+  $font-weight: normal,
+  $font-family: $footer-font-stack,
+  $width: 33.333%
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-family: $font-family;
+  width: $width;
+}
+
+
+/* footer-nav */
+
+.footer-nav {
+  background-color: $footer-bg-color;
+  color: $footer-li-color;
+  // padding: rem-calc(10);
+  // font-size: 0;
+  list-style: none;
+  // margin: 0;
+  // overflow: hidden;
+  // padding: 0;
+  // width: 100%;
+  margin-bottom: rem-calc(20);
+  // margin-top: rem-calc(40);
+
+  > li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    // removes social media links on small screen size and below (default) - TJ 110818
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      display: none;
+
+      // adds social media links on medium screen size and above - TJ 110818
+      @include breakpoint(medium up) {
+        display: inline-block;
+      }
+    }
+
+
+    @include breakpoint(small) {
+      @include footer-nav($footer-font-size-small);
+    }
+
+    @include breakpoint(smallxx) {
+      @include footer-nav($footer-font-size-smallxx);
+    }
+
+    @include breakpoint(medium) {
+      @include footer-nav($footer-font-size-medium, $width: 20%);
+    }
+
+    include breakpoint(large up) {
+      @include footer-nav($footer-font-size-large, $width: 20%)
+    }
+
+    > a {
+      color: $footer-li-color;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        background-color: $footer-bg-color-hover;
+        color: $footer-li-color-hover;
+      }
+    } // a
+  } // li
+} // footer-nav
+
+
+.footer-copyright {
+  font-size: rem-calc(10);
+  margin-top: rem-calc(20);
+  text-align: right;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(12);  
+  }
+
+  @include breakpoint(large up) {
+    font-size: rem-calc(14);  
+  }
+}

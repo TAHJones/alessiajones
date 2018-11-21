@@ -1,0 +1,514 @@
+/* -----------------------------------------------------------------------
+    COMPONENTS
+------------------------------------------------------------------------- */
+
+
+/* CUSTOM-CARD */
+
+/* custom-card - font type variables */
+
+$custom-card-title-font-stack: "Varela Round", sans-serif, Georgia, "Times New Roman", Times, serif;
+$custom-card-text-font-stack: "Pacifico", cursive, Georgia, "Times New Roman", Times, serif;
+
+
+/* custom-card - font size variables */
+
+$custom-card-font-size-small: rem-calc(25);
+$custom-card-font-size-medium: rem-calc(25);
+$custom-card-font-size-large: rem-calc(30);
+
+/* custom-card - margin size variables */
+
+$custom-card-title-margin-bottom-medium: rem-calc(5);
+$custom-card-title-margin-bottom-large: rem-calc(18);
+$custom-button-margin-top-medium: rem-calc(20);
+
+/* custom-card - title styles mixin */
+
+@mixin custom-card-title-styles (
+  $font-size: $custom-card-font-size-small,
+  $margin-bottom: rem-calc(30),
+  $margin-top: rem-calc(40)
+) {
+  font-size: $font-size;
+  margin-bottom: $margin-bottom;
+  margin-top: $margin-top;
+}
+
+
+/* custom-card - text styles mixin */
+
+@mixin custom-card-text-styles (
+  $font-size: $custom-card-font-size-small,
+  $margin-bottom: rem-calc(10),
+  $margin-top: rem-calc(0)
+) {
+  font-size: $font-size;
+  margin-bottom: $margin-bottom;
+  margin-top: $margin-top;
+}
+
+
+/* CUSTOM-BUTTON */
+
+/* custom-button - border style variables */
+
+$custom-button-border-color: #222; //darken(#39a7cc,20%);
+$custom-button-border-radius: 4px;
+$custom-button-border-width: 4px;
+
+
+/* custom-button - font size variables */
+
+$custom-button-font-size-small: rem-calc(15);
+$custom-button-font-size-medium: rem-calc(18);
+$custom-button-font-size-large: rem-calc(20);
+
+
+/* custom-button - style variables */
+
+$custom-button-background: lighten(#222, 20%);
+$custom-button-background-hover: lighten(#222, 10%);
+$custom-button-color: lighten(#222, 60%);
+$custom-button-color-hover: lighten(#222, 60%);
+
+
+/* custom-button - border mixin */
+
+@mixin custom-button-border ( // added to custom-button-styles mixin
+  $border-color: $custom-button-border-color,
+  $border-radius: $custom-button-border-radius,
+  $border-width: $custom-button-border-width
+) {
+  border-color: #222; // $border-color;
+  border-radius: $border-radius;
+  border-width: $border-width;
+}
+
+
+/* custom-button - layout mixin */
+
+@mixin custom-button-layout (
+  $display: block,
+  $font-size: $custom-button-font-size-small,
+  $margin: 0 auto,
+  $margin-bottom: rem-calc(20),
+  $margin-top: rem-calc(50),
+  $width: 40%
+) {
+  display: $display;
+  font-size: $font-size;
+  margin: $margin;
+  margin-top:$margin-top;
+  margin-bottom: $margin-bottom;
+  width: $width; 
+}
+
+
+/* custom-button - styles mixin */
+
+@mixin custom-button-styles (
+  $background: $custom-button-background,
+  $background-hover: $custom-button-background-hover,
+  $color: $custom-button-color,
+  $color-hover: $custom-button-color-hover,
+  $font-weight: bold
+) {
+  @include custom-button-border();
+  background: $background;
+  color: $color;
+  font-weight: $font-weight;
+
+  &:hover,
+  &:focus {
+    background-color: $background-hover;
+    color: $color-hover;
+  }
+}
+
+
+/* COMPONENT CLASSES */
+
+/* custom-card - class */
+
+.custom-card > .card-section {
+
+  &:nth-of-type(1) > p { // custom-card title
+    font-family: $custom-card-title-font-stack;
+    font-weight: bold;
+    text-align: center;
+
+    @include breakpoint(small) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-small + rem-calc(10)),
+        $margin-bottom: rem-calc(30),
+        $margin-top: rem-calc(30)
+      )
+    }
+
+    @include breakpoint(smallxx) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-small + rem-calc(15)),
+        $margin-bottom: rem-calc(30),
+        $margin-top: rem-calc(30)
+      )
+    }
+
+    @include breakpoint(medium) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(10)),
+        $margin-bottom: $custom-card-title-margin-bottom-medium,
+        $margin-top: rem-calc(0)
+      )
+    }
+
+    @include breakpoint(medium660) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(10)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(4)),
+        $margin-top: rem-calc(0)
+      )
+    }
+
+    @include breakpoint(medium680) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(10)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(8)),
+        $margin-top: rem-calc(0)
+      )
+    }
+
+    @include breakpoint(medium700) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(10)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(12)),
+        $margin-top: rem-calc(0)
+      )
+    }
+
+    @include breakpoint(mediumx) { // 720px
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(12)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(15)),
+        $margin-top: rem-calc(2)
+      )
+    }
+
+    @include breakpoint(medium740) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(12)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(19)),
+        $margin-top: rem-calc(2)
+      )
+    }
+
+    @include breakpoint(medium760) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(12)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(23)),
+        $margin-top: rem-calc(2)
+      )
+    }
+
+    @include breakpoint(medium780) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(12)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(27)),
+        $margin-top: rem-calc(2)
+      )
+    }
+
+    @include breakpoint(mediumxx) { // 800px
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(15)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(25)),
+        $margin-top: rem-calc(6)
+      )
+    }
+
+    @include breakpoint(medium820) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(15)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(27)),
+        $margin-top: rem-calc(6)
+      )
+    }
+
+    @include breakpoint(medium840) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(15)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(29)),
+        $margin-top: rem-calc(8)
+      )
+    }
+
+    @include breakpoint(medium860) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(15)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(31)),
+        $margin-top: rem-calc(11)
+      )
+    }
+
+    @include breakpoint(medium880) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(15)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(33)),
+        $margin-top: rem-calc(14)
+      )
+    }
+
+    @include breakpoint(mediumxxx) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(18)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(36)),
+        $margin-top: rem-calc(14)
+      )
+    }
+
+    @include breakpoint(medium920) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(18)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(38)),
+        $margin-top: rem-calc(14)
+      )
+    }
+
+    @include breakpoint(medium940) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(18)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(40)),
+        $margin-top: rem-calc(18)
+      )
+    }
+
+    @include breakpoint(medium960) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(18)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(42)),
+        $margin-top: rem-calc(24)
+      )
+    }
+
+    @include breakpoint(medium980) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(18)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(44)),
+        $margin-top: rem-calc(26)
+      )
+    }
+
+    @include breakpoint(medium1000) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-medium + rem-calc(20)),
+        $margin-bottom: ($custom-card-title-margin-bottom-medium + rem-calc(42)),
+        $margin-top: rem-calc(26)
+      )
+    }
+
+    @include breakpoint(large up) {
+      @include custom-card-title-styles(
+        $font-size: ($custom-card-font-size-large + rem-calc(14)),
+        $margin-bottom: $custom-card-title-margin-bottom-large,
+        $margin-top: rem-calc(0)
+      )     
+    }
+  }
+
+  &:nth-of-type(2) > p { // custom-card text
+    font-family: $custom-card-text-font-stack;
+    font-weight: normal;
+    text-align: center;
+
+    @include breakpoint(small) {
+      @include custom-card-text-styles(
+        $font-size: $custom-card-font-size-small,
+        $margin-bottom: rem-calc(5),
+        $margin-top: rem-calc(0)
+      )
+    }
+
+    @include breakpoint(smallxx) {
+      @include custom-card-text-styles(
+        $font-size: $custom-card-font-size-medium,
+        $margin-bottom: rem-calc(5),
+        $margin-top: rem-calc(0)
+      )
+    }
+
+    @include breakpoint(medium) {
+      @include custom-card-text-styles(
+        $font-size: $custom-card-font-size-medium,
+        $margin-bottom: rem-calc(0),
+        $margin-top: rem-calc(0)
+      )
+    }
+
+    @include breakpoint(large up) {
+      @include custom-card-text-styles(
+        $font-size: $custom-card-font-size-large,
+        $margin-bottom: rem-calc(10),
+        $margin-top: rem-calc(10)
+      )
+    }    
+  }
+
+  > a.button {
+    @include custom-button-styles()
+
+    @include breakpoint(small) {
+      @include custom-button-layout()
+    }
+
+    @include breakpoint(smallxx) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-medium,
+        $margin-top: rem-calc(50),
+        $width: 45%
+      )
+    }
+
+    @include breakpoint(smallxxx) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-medium,
+        $margin-top: rem-calc(50),
+        $width: 40%
+      )
+    }
+
+    @include breakpoint(xmedium) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-large,
+        $margin-top: rem-calc(50),
+        $width: 37%
+      )
+    }
+
+    @include breakpoint(xxmedium) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-large,
+        $margin-top: rem-calc(50),
+        $width: 30%
+      )
+    }
+
+    @include breakpoint(medium) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: $custom-button-margin-top-medium,
+        $width: 60%
+      )
+    }
+
+    @include breakpoint(medium660) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(4)),
+        $width: 60%
+      )
+    }
+
+    @include breakpoint(medium680) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(8)),
+        $width: 60%
+      )
+    }
+
+    @include breakpoint(medium700) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(12)),
+        $width: 60%
+      )
+    }
+
+    @include breakpoint(mediumx) { // 720px
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(18)),
+        $width: 55%
+      )
+    }
+
+    @include breakpoint(medium740) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(22)),
+        $width: 55%
+      )
+    }
+
+    @include breakpoint(medium760) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(26)),
+        $width: 55%
+      )
+    }
+
+    @include breakpoint(medium780) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(30)),
+        $width: 55%
+      )
+    }
+
+    @include breakpoint(mediumxx) { // 800px
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(30)),
+        $width: 50%
+      )
+    }
+    @include breakpoint(medium820) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(32)),
+        $width: 48%
+      )
+    }
+    @include breakpoint(medium840) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(34)),
+        $width: 46%
+      )
+    }
+    @include breakpoint(medium860) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(36)),
+        $width: 45%
+      )
+    }
+
+    @include breakpoint(medium880) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(38)),
+        $width: 45%
+      )
+    }
+
+    @include breakpoint(medium1000) {
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-small,
+        $margin-top: ($custom-button-margin-top-medium + rem-calc(40)),
+        $width: 45%
+      )
+    }
+
+    @include breakpoint(large up) {
+
+      @include custom-button-layout(
+        $font-size: $custom-button-font-size-large,
+        $margin-top: rem-calc(40),
+        $width: 40%
+      )
+    }
+  } // button
+
+} // custom-card

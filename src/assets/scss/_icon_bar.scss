@@ -1,0 +1,81 @@
+/* -----------------------------------------------------------------------
+    icon bar
+------------------------------------------------------------------------- */
+
+/* paragraph - font size variables */
+
+$font-size-xsmall: rem-calc(10);
+$font-size-small: rem-calc(14);
+$font-size-medium: rem-calc(16);
+$font-size-large: rem-calc(18);
+
+$nav-font-size-xsmall: $font-size-xsmall;
+$nav-font-size-small: $font-size-small;
+$nav-font-size-medium: $font-size-medium;
+$nav-font-size-large: $font-size-large;
+
+
+
+
+
+footer {
+  margin-top: rem-calc(15);
+  padding: 0 rem-calc(15);
+}
+
+/* custom-icon-bar - variables*/
+
+$icon-bar-bg: $navigationcolor;
+$icon-bar-font-color: $white;
+$icon-bar-font-color-hover: $icon-bar-font-color;
+
+//$icon-bar-font-size: 1rem;
+$custom-icon-bar-font-size: .65rem;
+
+$icon-bar-hover-color: $navigationcolorhover;
+$icon-bar-icon-color: $white;
+$icon-bar-icon-color-hover: $icon-bar-icon-color;
+
+//$icon-bar-icon-size: 1.875rem;
+$custom-icon-bar-icon-size: 1.4rem;
+
+$icon-bar-image-width: 1.875rem;
+
+//$icon-bar-image-height: 1.875rem;
+$custom-icon-bar-image-height: 1rem;
+
+$icon-bar-active-color: $primary-color;
+
+//$icon-bar-item-padding: 1.25rem;
+$custom-icon-bar-item-padding: .5rem;
+
+//$icon-bar-disabled-opacity: 0.
+
+
+/* custom-icon-bar - mixin */
+
+.custom-icon-bar {
+  @include icon-bar(
+    $bar-bg: $icon-bar-bg,
+    $bar-font-color: $icon-bar-font-color,
+    $bar-hover-color: $icon-bar-hover-color,
+    $bar-icon-color: $icon-bar-icon-color,
+    $bar-active-color: $icon-bar-active-color,
+    $padding: $custom-icon-bar-item-padding,
+    $font-size: $custom-icon-bar-font-size,
+    $icon-size: $custom-icon-bar-icon-size,
+    $image-width: $icon-bar-image-width,
+    $image-height: $custom-icon-bar-image-height,
+    $base-style: true,
+    $disabled: false
+  );
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.hr-footer {
+  margin-top: rem-calc(14);
+}
+

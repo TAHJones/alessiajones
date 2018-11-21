@@ -1,0 +1,80 @@
+/* -----------------------------------------------------------------------
+    global mixins
+------------------------------------------------------------------------- */
+
+/* borders */
+
+/*@mixin border {
+  border: 2px solid $bordercolor;
+  border-radius: 6px;
+}*/
+
+/*@mixin border-shadow {
+  border: 4px solid $bordercolor;
+  border-radius: 6px;
+  box-shadow: 10px 10px 5px $bordershadow;
+}*/
+
+/*@mixin footer-border {
+  border-color: $bordercolor;
+  border-style: solid;
+  border-width: 0 0 2px;
+}*/
+
+
+/* wrapper / grid-row */
+
+// For creating a wrapper, container, nested, and collapsed rows.
+//
+// $behavior - Any special behavior for this row? Default: false. Options: nest, collapse, nest-collapse, false.
+@mixin grid-row($behavior: false) {
+
+  // use @include grid-row(nest); to include a nested row
+  @if $behavior == nest {
+    margin: 0 (-($column-gutter/2));
+    max-width: none;
+    width: auto;
+  }
+
+  // use @include grid-row(collapse); to collapsed a container row margins
+  @else if $behavior == collapse {
+    margin: 0;
+    max-width: $row-width;
+    width: 100%;
+  }
+
+  // use @include grid-row(nest-collapse); to collapse outer margins on a nested row
+  @else if $behavior == nest-collapse {
+    margin: 0;
+    max-width: none;
+    width: auto;
+  }
+
+  // use @include grid-row(wrapper); to use a larger row as a wrapper for the entire page
+  @else if $behavior == wrapper {
+    margin: 0 auto;
+    max-width: $row-wrapper;
+    width: 100%;
+  }
+
+  // use @include grid-row; to use a container row
+  @else {
+    margin: 0 auto;
+    max-width: $row-width;
+    width: 100%;
+  }
+
+  // Clearfix for all rows
+  @include clearfix();
+}
+
+// styles for wrapper
+
+@mixin wrapper-styles () {
+  background-color: $foregroundcolor;
+  border-color: $foregroundcolor;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 12px;
+  margin: 20px auto;
+}

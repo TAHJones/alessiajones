@@ -1,0 +1,127 @@
+/* -----------------------------------------------------------------------
+    row layout
+------------------------------------------------------------------------- */
+
+/* row padding variables */
+
+$padding-small: 10px 0;
+$padding-medium: 15px 0;
+$padding-large: 20px 0;
+$padding-xlarge: 30px 0;
+$padding-bottom-large: 0 0 20px;
+$padding-bottom-xlarge: 0 0 30px;
+$padding-top-large: 20px 0 0px;
+$padding-top-xlarge: 30px 0 0px;
+$padding-slider: 40px 0 10px;
+$padding-fader: 0px 0px 0px 40px;
+
+/* row - color variables */
+
+$page-color: #d2e089;
+$slider-color: #e8f1bb;
+
+
+/* row padding mixin */
+
+@mixin row-padding($row-padding) {
+  @if $row-padding == small {
+    padding: $padding-small;
+  }
+
+  @else if $row-padding == medium {
+    padding: $padding-medium;
+  }
+
+  @else if $row-padding == large {
+    padding: $padding-large;
+  }
+
+  @else if $row-padding == xlarge {
+    padding: $padding-xlarge;
+  }
+
+  @else if $row-padding == large-bottom {
+    padding: $padding-bottom-large;
+  }
+
+  @else if $row-padding == large-top {
+    padding: $padding-top-large;
+  }
+
+  @else if $row-padding == xlarge-top {
+    padding: $padding-top-xlarge;
+  }
+
+  @else if $row-padding == slider-padding {
+    padding: $padding-slider;
+  }
+
+  @else if $row-padding == fader-padding {
+    padding: $padding-fader;
+  }
+}
+
+
+/* row color mixin */
+
+@mixin row-color($row-color) {
+  @if $row-color == wrapper {
+    background-color: $wrapper-color;
+  }
+
+  @else if $row-color == page {
+    background-color: $page-color;
+  }
+
+  @else if $row-color == slider {
+    background-color: $slider-color;
+  }
+}
+
+
+
+
+/* row layout classes */
+
+.row-page {
+  @include row-padding(large);
+}
+
+.row-padding-top-large {
+  @include row-padding(large-top);
+}
+
+.row-padding-top-xlarge {
+  @include row-padding(xlarge-top);
+}
+
+.row-padding-xlarge {
+  @include row-padding(xlarge);
+}
+
+.row-padding-bottom-large {
+  @include row-padding(large-bottom)
+}
+
+.row-logo {
+  .title {text-align: center;}
+}
+
+.row-slider {
+  @include row-padding(slider-padding);
+  @include row-color(slider);
+  .slick-img {
+    padding: 0 rem-calc(20);
+  }
+}
+
+.row-fader {
+  @include breakpoint(xmedium){
+    padding-left: 20px;
+  }
+
+  @include breakpoint(large){
+    padding-left: 40px;
+  }
+  // @include row-padding(fader-padding);
+}

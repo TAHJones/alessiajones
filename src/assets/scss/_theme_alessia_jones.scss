@@ -1,0 +1,24 @@
+@import '_global_variables.scss';
+@import '_global_mixins.scss';
+@import '_global_media_queries.scss';
+@import '_row_layout.scss';
+@import '_general_styles.scss';
+@import '_component_styles.scss';
+@import '_top_bar.scss';
+@import '_footer.scss';
+// @import '_icon_bar.scss';
+// @import '_slideshow_styles.scss';
+@import '_gallery_styles.scss';
+@import '_contact_form.scss';
+@import '_error_404';
+
+// scss partial files for plugins
+@import '_slick';
+@import '_slick-theme';
+// @import '_slick-lightbox';
+// @import '_lg-variables';
+// @import '_lg-mixins';
+// @import '_lg-fonts';
+// @import '_lg-theme-default';
+@import '_lightgallery';
+// @import '_lg-thumbnail';
