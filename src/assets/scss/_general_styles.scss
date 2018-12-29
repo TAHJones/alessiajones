@@ -13,24 +13,50 @@ body {
     background-color: $background-color;
     margin: 0 auto;
     max-width: 1200px;
+    padding: 60px 0 30px;
+}
+
+// fix for home page, adds addition padding at bottom of page to increase page length and prevent blue background color showing at bottom of page
+.page-home {
+  @include breakpoint(medium) {
+    padding: 120px 0;
+  }
 }
 
 /* Header and Footer*/
 
 header {
-  margin-bottom: rem-calc(60);
+  margin-bottom: rem-calc(100);
 
   @include breakpoint(medium) {
-    margin-bottom: rem-calc(80);
+    margin-bottom: rem-calc(120);
+  }
+}
+
+// fix for home page, adds addition padding at bottom of page to increase page length and prevent blue background color showing at bottom of page
+.page-home > header {
+  margin-bottom: rem-calc(120);
+
+  @include breakpoint(medium) {
+    margin-bottom: rem-calc(170);
   }
 }
 
 footer {
   margin-bottom: rem-calc(0);
-  margin-top: rem-calc(60);
+  margin-top: rem-calc(100);
 
   @include breakpoint(medium) {
-    margin-top: rem-calc(80);
+    margin-top: rem-calc(120);
+  }
+}
+
+// fix for home page, adds addition padding at bottom of page to increase page length and prevent blue background color showing at bottom of page
+.page-home > footer {
+  margin-top: rem-calc(90);
+
+  @include breakpoint(medium) {
+    margin-top: rem-calc(140);
   }
 }
 
@@ -39,7 +65,7 @@ footer {
 h1.title {
   font-family: $secondary-font-stack;
   font-size: 300%;
-  margin: rem-calc(20) 0 rem-calc(30);
+  margin: rem-calc(20) 0 rem-calc(60);
 
   > small { // subheader on medium & large screen
     font-size: 50%;

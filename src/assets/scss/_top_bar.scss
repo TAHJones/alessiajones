@@ -23,7 +23,10 @@ $menu-button-bg-hover: $link-bg-hover;
 
 /* navigation - classes */
 
-.top-bar {padding: rem-calc(0);}
+.top-bar {
+  margin-bottom: rem-calc(160);
+  padding: rem-calc(0);
+}
 
 // custom styles for topbar and dropdown menus - TJ 110818
 ul.custom-menu > li {
